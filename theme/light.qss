@@ -1,0 +1,33 @@
+QWidget{
+    font-family: "Kranky";
+    font-size: 11pt;
+    background-color: white;
+    color: black;
+}
+QMenuBar::item:selected{
+    background-color: gray;
+    color: white;
+}
+QMenu::item:selected{
+    background-color: gray;
+    color: white;
+}
+QLabel{
+  background-color: gray;
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+}
+QPushButton{
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+}
+QPushButton:hover{
+  background-color: #FFF2F2;
+  text-decoration: "underline";
+}
