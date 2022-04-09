@@ -153,7 +153,6 @@ fabric.properties
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### Example user template template
 ### Example user template
 
 # IntelliJ project files
@@ -161,6 +160,9 @@ fabric.properties
 *.iml
 out
 gen
+/gcl
+
+
 ### Windows template
 # Windows thumbnail cache files
 Thumbs.db
@@ -219,7 +221,7 @@ MANIFEST
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
-*.spec
+# *.spec
 
 # Installer logs
 pip-log.txt
@@ -325,4 +327,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
