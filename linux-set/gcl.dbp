@@ -1,7 +1,7 @@
 [DEBREATE-0.7.13]
 <<CTRL>>
 Package: gc-lantern
-Version: 01-042022
+Version: 0.1-042022
 Maintainer: ArtesGC,Inc <nuruldecarvalho@gmail.com>
 Section: misc
 Architecture: amd64
