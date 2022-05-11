@@ -12,7 +12,7 @@ class GCL:
         QFontDatabase.addApplicationFont('fonts/Kranky.ttf')
 
         self.ferramentas = QWidget()
-        self.ferramentas.setWindowTitle('GC-lantern')
+        self.ferramentas.setWindowTitle('lanternGC')
         self.ferramentas.setWindowState(Qt.WindowState.WindowMaximized)
         self.ferramentas.setWindowFlags(Qt.WindowType.WindowMinimizeButtonHint)
         self.ferramentas.setStyleSheet(temaescuro)
