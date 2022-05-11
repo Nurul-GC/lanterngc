@@ -1,6 +1,6 @@
 <div align="center">
 
-![lanterngc-icon](icons/lanterngc-favicon/favicon-192x192.png)
+![lanterngc-icon](lanterngc-favicon/favicon-192x192.png)
 
 # GC-Lantern
 
