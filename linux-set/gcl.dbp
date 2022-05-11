@@ -1,7 +1,7 @@
 [DEBREATE-0.7.13]
 <<CTRL>>
 Package: gc-lantern
-Version: 0.1-042022
+Version: 0.1-052022
 Maintainer: ArtesGC,Inc <nuruldecarvalho@gmail.com>
 Section: misc
 Architecture: amd64
@@ -39,12 +39,12 @@ rm -f "/usr/bin/gcl"
 <</SCRIPTS>>
 <<CHANGELOG>>
 <<DEST>>DEFAULT<</DEST>>
-gc-lantern (01-042022) impish; urgency=medium
+gc-lantern (01-052022) impish; urgency=medium
 
   * Idea's Creation and organization;
   * Customized the layout and the principal functions;
 
- -- ArtesGC,Inc <nuruldecarvalho@gmail.com>  Sat, 09 Apr 2022 22:20:29 +0100
+ -- ArtesGC,Inc <nuruldecarvalho@gmail.com>  Sat, 11 May 2022 22:28:29 +0100
 
 <</CHANGELOG>>
 <<COPYRIGHT>>
