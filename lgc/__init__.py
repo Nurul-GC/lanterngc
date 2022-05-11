@@ -1,96 +1,41 @@
-import webbrowser
-from sys import argv, exit
+from random import randint
+from sys import argv
+from time import sleep
 
-from PyQt6.QtWidgets import *
-from PyQt6.QtGui import *
 from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
+
+from lgcmain import LGC
 
 
-class GCL:
+class LGCINIT:
     def __init__(self):
         self.gc = QApplication(argv)
-        QFontDatabase.addApplicationFont('fonts/Kranky.ttf')
 
-        self.ferramentas = QWidget()
-        self.ferramentas.setWindowTitle('lanternGC')
-        self.ferramentas.setWindowState(Qt.WindowState.WindowMaximized)
-        self.ferramentas.setWindowFlags(Qt.WindowType.WindowMinimizeButtonHint)
-        self.ferramentas.setStyleSheet(temaescuro)
+        # application font
+        QFontDatabase.addApplicationFont("./lgc-fonts/Kranky.ttf")
 
-        self.layout = QVBoxLayout()
+        img = QPixmap("./lgc-icons/init.png")
+        self.align = int(Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignAbsolute)
+        self.color = Qt.GlobalColor.white
+        self.janela = QSplashScreen(img)
+        self.janela.setStyleSheet('font-family: "Kranky";'
+                                  'font-size: 11pt;')
+        self.janela.show()
+        self.iniciar()
 
-        menu = QMenuBar()
-        detalhes = menu.addMenu('Details')
-        instr = detalhes.addAction('Instructions')
-        instr.triggered.connect(self._instr)
-        detalhes.addSeparator()
-        sair = detalhes.addAction('Exit')
-        sair.triggered.connect(self._sair)
-        sobre = menu.addAction('About')
-        sobre.triggered.connect(self._sobre)
-        self.layout.setMenuBar(menu)
-        self.ferramentas.setLayout(self.layout)
-
-        self.principal()
-
-        link = lambda: webbrowser.open_new('https://artesgc.home.blog')
-        copyrightlabel = QLabel('<a style="text-decoration: none;" href="#">&trade; ArtesGC, Inc</a>')
-        copyrightlabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        copyrightlabel.linkActivated.connect(link)
-        copyrightlabel.setToolTip("Open ArtesGC's oficial website!")
-        barramenu = QToolBar("Copyright")
-        barramenu.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
-        barramenu.addWidget(copyrightlabel)
-        self.layout.addWidget(barramenu)
-
-    def principal(self):
-        def ligar():
-            if lantern_btn.isChecked():
-                lantern_btn.setText('OFF')
-                self.ferramentas.setStyleSheet(temaclaro)
-            else:
-                lantern_btn.setText('ON')
-                self.ferramentas.setStyleSheet(temaescuro)
-
-        frame = QFrame()
-        layout = QVBoxLayout()
-
-        lantern_btn = QPushButton('ON')
-        lantern_btn.setFixedHeight(550)
-        lantern_btn.setAutoExclusive(True)
-        lantern_btn.setCheckable(True)
-        lantern_btn.clicked.connect(ligar)
-        layout.addWidget(lantern_btn)
-
-        frame.setLayout(layout)
-        self.layout.addWidget(frame)
-
-    def _sobre(self):
-        QMessageBox.information(self.ferramentas, 'About', '''<h2>Information about the Program</h2><hr>
-        Name: <b>GC-lantern (GCL)</b><br>
-        Version: <b>0.1-042022</b><br>
-        Programmer & Designer: <b>Nurul-GC</b><br>
-        Company: <b>ArtesGC, Inc.</b>''')
-
-    def _instr(self):
-        QMessageBox.information(self.ferramentas, 'Instructions', '''<h2>Quick Presentation</h2><hr>
-        <p>Hello Dear User!<br>
-        I present to you a very practical and useful tool,
-        a program that works as a lantern on your desktop/tablet PC..</p>
-        <p>It's easy to be used, you just need to push the button and it will change his theme,
-        helping you to see what's around you!</p>
-        <p>Thanks for your support!<br>
-        <b>&trade;ArtesGC, Inc.</b></p>''')
-
-    def _sair(self):
-        pergunta = QMessageBox.question(self.ferramentas, 'Confirm Exit', 'Do you really want to close the program?')
-        if pergunta == pergunta.Yes:
-            exit(0)
+    def iniciar(self):
+        load = 0
+        while load < 100:
+            self.janela.showMessage(f"Loading Package: {load}%", self.align, self.color)
+            sleep(0.3)
+            load += randint(5, 10)
+        self.janela.close()
+        app = LGC()
+        app.ferramentas.show()
 
 
 if __name__ == '__main__':
-    temaescuro = open('theme/dark.qss').read().strip()
-    temaclaro = open('theme/light.qss').read().strip()
-    app = GCL()
-    app.ferramentas.show()
-    app.gc.exec()
+    lgcApp = LGCINIT()
+    lgcApp.gc.exec()
