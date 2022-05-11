@@ -4,7 +4,7 @@
 block_cipher = None
 
 
-a = Analysis(['gcl.py'],
+a = Analysis(['lgc/__init__.py'],
              pathex=['./'],
              binaries=[],
              datas=[],
