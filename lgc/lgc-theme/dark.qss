@@ -1,21 +1,20 @@
 QWidget{
     font-family: "Kranky";
-    font-size: 11pt;
     background-color: black;
-    color: gray;
+    color: white;
 }
 QMenuBar::item:selected{
     background-color: gray;
-    color: white;
+    color: black;
 }
 QMenu::item:selected{
     background-color: gray;
-    color: white;
+    color: black;
 }
 QLabel{
   background-color: gray;
   border-radius: 10px;
-  color: white;
+  color: black;
   padding: 20px;
 }
 QPushButton{
