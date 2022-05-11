@@ -25,7 +25,7 @@ LicenseFile=C:\Users\sinotec\PycharmProjects\gc-lantern\LICENSE
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 OutputDir=C:\Users\sinotec\PycharmProjects\gc-lantern\dist
-OutputBaseFilename=gc-lantern_#MyAppVersion-042022_amd64
+OutputBaseFilename=gc-lantern_#MyAppVersion-052022_amd64
 SetupIconFile=C:\Users\sinotec\PycharmProjects\gc-lantern\icons\favicon-256x256.ico
 Compression=lzma
 SolidCompression=yes
