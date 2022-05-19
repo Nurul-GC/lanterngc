@@ -11,17 +11,19 @@ temaclaro = open('lgc-theme/light.qss').read().strip()
 
 class LGC:
     def __init__(self):
-        self.gc = QApplication(argv)
-        QFontDatabase.addApplicationFont('lgc-fonts/Kranky.ttf')
+        self.lantern_btn = None
 
+        # main-window-widget
         self.ferramentas = QWidget()
-        self.ferramentas.setWindowTitle('lanternGC')
+        self.ferramentas.setWindowTitle('LanternGC')
         self.ferramentas.setWindowState(Qt.WindowState.WindowMaximized)
         self.ferramentas.setWindowFlags(Qt.WindowType.WindowMinimizeButtonHint)
         self.ferramentas.setStyleSheet(temaescuro)
 
+        # main-layout
         self.layout = QVBoxLayout()
 
+        # menu-bar
         menu = QMenuBar()
         detalhes = menu.addMenu('Details')
         instr = detalhes.addAction('Instructions')
@@ -32,42 +34,46 @@ class LGC:
         sobre = menu.addAction('About')
         sobre.triggered.connect(self._sobre)
         self.layout.setMenuBar(menu)
-        self.ferramentas.setLayout(self.layout)
 
         self.principal()
 
+        # copyright-label
         link = lambda: webbrowser.open_new('https://artesgc.home.blog')
-        copyrightlabel = QLabel('<a style="text-decoration: none;" href="#">&trade; ArtesGC, Inc</a>')
+        copyrightlabel = QLabel('<a style="text-decoration: none; background-color: none;" href="#">&trade; ArtesGC, Inc</a>')
         copyrightlabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         copyrightlabel.linkActivated.connect(link)
         copyrightlabel.setToolTip("Open ArtesGC's oficial website!")
+
         barramenu = QToolBar("Copyright")
         barramenu.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        barramenu.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonFollowStyle)
         barramenu.addWidget(copyrightlabel)
         self.layout.addWidget(barramenu)
+        self.ferramentas.setLayout(self.layout)
 
     def principal(self):
-        def ligar():
-            if lantern_btn.isChecked():
-                lantern_btn.setText('&OFF')
-                self.ferramentas.setStyleSheet(temaclaro)
-            else:
-                lantern_btn.setText('&ON')
-                self.ferramentas.setStyleSheet(temaescuro)
-
         frame = QFrame()
-        layout = QVBoxLayout()
+        layout = QFormLayout()
 
-        lantern_btn = QPushButton('&ON')
-        lantern_btn.setFixedHeight(550)
-        lantern_btn.setAutoExclusive(True)
-        lantern_btn.setCheckable(True)
-        lantern_btn.clicked.connect(ligar)
-        layout.addWidget(lantern_btn)
+        self.lantern_btn = QPushButton('&ON')
+        self.lantern_btn.setFixedHeight(565)
+        self.lantern_btn.setCheckable(True)
+        self.lantern_btn.clicked.connect(self.ligar)
 
+        layout.addRow(self.lantern_btn)
         frame.setLayout(layout)
         self.layout.addWidget(frame)
 
+    # main-button-function
+    def ligar(self):
+        if self.lantern_btn.isChecked():
+            self.lantern_btn.setText('&OFF')
+            self.ferramentas.setStyleSheet(temaclaro)
+        else:
+            self.lantern_btn.setText('&ON')
+            self.ferramentas.setStyleSheet(temaescuro)
+
+    # menu-bar-functions
     def _sobre(self):
         QMessageBox.information(self.ferramentas, 'About', '''<h2>Information about the Program</h2><hr>
         Name: <b>GC-lantern (LGC)</b><br>
@@ -86,6 +92,9 @@ class LGC:
         <b>&trade;ArtesGC, Inc.</b></p>''')
 
     def _sair(self):
-        pergunta = QMessageBox.question(self.ferramentas, 'Confirm Exit', '<b>Do you really want to close the program?</b>')
-        if pergunta == pergunta.Yes:
-            exit(0)
+        if self.lantern_btn.isChecked():
+            pergunta = QMessageBox.question(self.ferramentas, 'Confirm Exit', '<b>Do you really want to close the program?</b>')
+            if pergunta == pergunta.Yes:
+                return exit(0)
+        else:
+            return exit(0)
