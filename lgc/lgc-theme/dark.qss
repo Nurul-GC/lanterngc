@@ -1,26 +1,34 @@
 QWidget{
-    font-family: "Kranky";
-    background-color: black;
-    color: white;
+  font-family: "Kranky";
+  background-color: black;
+  color: white;
+}
+QMenuBar{
+  background-color: gray;
+  color: black;
 }
 QMenuBar::item:selected{
-    background-color: gray;
-    color: black;
+  background-color: black;
+  color: white;
+}
+QMenu{
+  background-color: gray;
+  color: black;
 }
 QMenu::item:selected{
-    background-color: gray;
-    color: black;
+  background-color: black;
+  color: white;
 }
 QLabel{
   background-color: gray;
   border-radius: 10px;
   color: black;
-  padding: 20px;
+  padding: 10px;
 }
 QPushButton{
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   border-width: 1px;
   border-style: solid;
