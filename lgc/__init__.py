@@ -18,7 +18,7 @@ class LGCINIT:
 
         img = QPixmap("./lgc-icons/init.png")
         self.align = int(Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignAbsolute)
-        self.color = Qt.GlobalColor.white
+        self.color = Qt.GlobalColor.yellow
         self.janela = QSplashScreen(img)
         self.janela.setStyleSheet('font-family: "Kranky";'
                                   'font-size: 11pt;')
