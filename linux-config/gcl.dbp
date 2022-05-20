@@ -1,6 +1,6 @@
 [DEBREATE-0.7.13]
 <<CTRL>>
-Package: gc-lantern
+Package: lanterngc
 Version: 0.1-052022
 Maintainer: ArtesGC,Inc <nuruldecarvalho@gmail.com>
 Section: misc
@@ -11,11 +11,11 @@ Description: A lantern for desktop/tablet PCs
 <</CTRL>>
 <<FILES>>
 1
-/home/nurul-gc/Projects/PycharmProjects/gc-lantern/LICENSE -> LICENSE -> /usr/share/gclantern
-/home/nurul-gc/Projects/PycharmProjects/gc-lantern/theme -> theme -> /usr/share/gclantern
-/home/nurul-gc/Projects/PycharmProjects/gc-lantern/fonts -> fonts -> /usr/share/gclantern
-/home/nurul-gc/Projects/PycharmProjects/gc-lantern/icons -> icons -> /usr/share/gclantern
-/home/nurul-gc/Projects/PycharmProjects/gc-lantern/dist/gcl* -> gcl -> /usr/share/gclantern
+/home/nurul-gc/Projects/PycharmProjects/lanterngc/LICENSE -> LICENSE -> /usr/share/lanterngc
+/home/nurul-gc/Projects/PycharmProjects/lanterngc/lgc/lgc-theme -> lgc-theme -> /usr/share/lanterngc
+/home/nurul-gc/Projects/PycharmProjects/lanterngc/lgc/lgc-fonts -> lgc-fonts -> /usr/share/lanterngc
+/home/nurul-gc/Projects/PycharmProjects/lanterngc/lgc/lgc-icons -> lgc-icons -> /usr/share/lanterngc
+/home/nurul-gc/Projects/PycharmProjects/lanterngc/dist/lgc* -> lgc -> /usr/share/lanterngc
 <</FILES>>
 <<SCRIPTS>>
 <<PREINST>>
@@ -25,13 +25,13 @@ Description: A lantern for desktop/tablet PCs
 1
 #! /bin/bash -e
 
-ln -fs "/usr/share/gclantern/gcl" "/usr/bin/gcl"
+ln -fs "/usr/share/lanterngc/lgc" "/usr/bin/lgc"
 <</POSTINST>>
 <<PRERM>>
 1
 #! /bin/bash -e
 
-rm -f "/usr/bin/gcl"
+rm -f "/usr/bin/lgc"
 <</PRERM>>
 <<POSTRM>>
 0
@@ -39,7 +39,7 @@ rm -f "/usr/bin/gcl"
 <</SCRIPTS>>
 <<CHANGELOG>>
 <<DEST>>DEFAULT<</DEST>>
-gc-lantern (01-052022) impish; urgency=medium
+lanterngc (01-052022) impish; urgency=medium
 
   * Idea's Creation and organization;
   * Customized the layout and the principal functions;
@@ -86,19 +86,19 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <</COPYRIGHT>>
 <<MENU>>
 1
-Name=GC-lantern
+Name=LanternGC
 Version=1.0
-Exec=/usr/share/gclantern/gcl
+Exec=/usr/share/lanterngc/lgc
 Comment=A lantern for desktop/tablet PCs
-Icon=/usr/share/gclantern/icons/favicon-512x512.png
+Icon=/usr/share/lanterngc/lgc-icons/favicon-512x512.png
 Type=Application
 Terminal=false
 StartupNotify=true
 Encoding=UTF-8
 Categories=Monitor;Qt;Utility;
-GenericName=gclantern
-Path=/usr/share/gclantern/
-StartupWMClass=GC-lantern
+GenericName=lanterngc
+Path=/usr/share/lanterngc/
+StartupWMClass=LanternGC
 <</MENU>>
 <<BUILD>>
 1
