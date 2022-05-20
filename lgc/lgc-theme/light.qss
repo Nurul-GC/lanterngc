@@ -1,6 +1,5 @@
 QWidget{
   font-family: "Kranky";
-  font-size: 11pt;
   background-color: white;
   color: black;
 }
