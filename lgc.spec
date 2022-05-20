@@ -4,8 +4,8 @@
 block_cipher = None
 
 
-a = Analysis(['lgc/__init__.py'],
-             pathex=['./'],
+a = Analysis(['./lgc/__init__.py'],
+             pathex=['./lgc/'],
              binaries=[],
              datas=[],
              hiddenimports=[],
