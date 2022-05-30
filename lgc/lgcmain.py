@@ -45,7 +45,7 @@ class LGC:
                 self.ferramentas.setStyleSheet(temaescuro)
 
         self.lantern_btn = QPushButton('&ON')
-        self.lantern_btn.setFixedHeight(600)
+        # self.lantern_btn.setFixedHeight(600)
         self.lantern_btn.setCheckable(True)
         self.lantern_btn.clicked.connect(ligar)
         self.layout.addRow(self.lantern_btn)
