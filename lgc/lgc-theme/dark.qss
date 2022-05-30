@@ -1,6 +1,7 @@
 QWidget{
   font-family: "Kranky";
   background-color: black;
+  background-image: url("./lgc-icons/lantern-1000x1000.png");
   color: white;
 }
 QMenuBar{
