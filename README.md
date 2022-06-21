@@ -6,6 +6,10 @@
 
     A simple and practical lantern for your desktop/tablet computer
 
+## Graphical Interface
+
+![demo-gui](img/lanterngc.png)
+
 ---
 
 &copy; 2022 Nurul-GC \
