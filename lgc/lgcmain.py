@@ -38,21 +38,26 @@ class LGC:
         # main-button-function
         def ligar():
             if self.lantern_btn.isChecked():
-                self.lantern_btn.setText('&OFF')
                 self.ferramentas.setStyleSheet(temaclaro)
             else:
-                self.lantern_btn.setText('&ON')
                 self.ferramentas.setStyleSheet(temaescuro)
 
-        self.lantern_btn = QPushButton('&ON')
-        # self.lantern_btn.setFixedHeight(600)
+        self.lantern_btn = QPushButton()
+        self.lantern_btn.setFixedHeight(550)
         self.lantern_btn.setCheckable(True)
+        self.lantern_btn.setStyleSheet('''
+        background-image: url("./lgc-icons/lantern.png");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-attachment: fixed;
+        background-position: center;
+        ''')
         self.lantern_btn.clicked.connect(ligar)
         self.layout.addRow(self.lantern_btn)
 
         # copyright-label
         link = lambda: webbrowser.open_new('https://artesgc.home.blog')
-        copyrightlabel = QLabel('<a style="text-decoration: none; background-color: none;" href="#">&trade; ArtesGC, Inc</a>')
+        copyrightlabel = QLabel('<a style="text-decoration: none; background-color: none;" href="#">&trade;ArtesGC, Inc</a>')
         copyrightlabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         copyrightlabel.linkActivated.connect(link)
         copyrightlabel.setToolTip("Open ArtesGC's oficial website!")
