@@ -72,7 +72,7 @@ class LGC:
     def _sobre(self):
         QMessageBox.information(self.ferramentas, 'About', '''<h2>Information about the Program</h2><hr>
         Name: <b>GC-lantern (LGC)</b><br>
-        Version: <b>0.1-052022</b><br>
+        Version: <b>0.2-062022</b><br>
         Programmer & Designer: <b>Nurul-GC</b><br>
         Company: <b>ArtesGC, Inc.</b>''')
 
