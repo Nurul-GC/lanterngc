@@ -1,7 +1,7 @@
 [DEBREATE-0.7.13]
 <<CTRL>>
 Package: lanterngc
-Version: 0.1-052022
+Version: 0.2-062022
 Maintainer: ArtesGC,Inc <nuruldecarvalho@gmail.com>
 Section: misc
 Architecture: amd64
@@ -39,6 +39,14 @@ rm -f "/usr/bin/lgc"
 <</SCRIPTS>>
 <<CHANGELOG>>
 <<DEST>>DEFAULT<</DEST>>
+lanterngc (02-062022) impish; urgency=medium
+   
+  * Changed the icons;
+  * Optimized the theme;
+  * Fixed some minor bugs;
+
+ -- ArtesGC,Inc <nuruldecarvalho@gmail.com>  Fri, 24 Jun 2022 2:55:49 +0100
+
 lanterngc (01-052022) impish; urgency=medium
 
   * Idea's Creation and organization;
