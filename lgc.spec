@@ -38,5 +38,4 @@ exe = EXE(pyz,
           target_arch=['x86_64-linux-gnu', 'Win-x86_64'],
           codesign_identity='Nurul-GC',
           entitlements_file=None,
-          icon='./lgc/lgc-icons/favicon-256x256.ico',
-          version_file='./lgc/versionfile.txt' )
+          icon='./lgc/lgc-icons/favicon-256x256.ico' )
